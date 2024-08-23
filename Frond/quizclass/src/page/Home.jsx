@@ -27,7 +27,9 @@ export const Home = () => {
   }, [controls]);
 
   return (
+    <>  
     <div className={`relative flex flex-col h-screen justify-center items-center bg-[${bgColor}] transition-colors duration-300 overflow-hidden`}>
+     
       {/* Fondo animado */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#f48ca4] to-[#a4cc64] opacity-20"></div>
 
@@ -51,6 +53,10 @@ export const Home = () => {
       <Link to="/Dashoard" className="bg-[#a4cc64] text-white px-8 py-4 rounded-lg text-2xl font-semibold mt-8 transition-transform transform hover:scale-105">
         Comenzar ya
       </Link>
+
+
     </div>
+    <Link to="/alumnos">aqui los alumnos gia</Link>
+    </>
   );
 };

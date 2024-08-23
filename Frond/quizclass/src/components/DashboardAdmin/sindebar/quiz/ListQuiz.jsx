@@ -1,13 +1,15 @@
 import React from 'react';
+//libreria para agregar animaciones a los componentes
 import { motion } from 'framer-motion';
 
 const ListarQuiz = ({ quizzes }) => {
   return (
     <div className="lg:w-1/2 p-6">
-      <h1 className="text-4xl font-bold mb-6 text-[#f48ca4] text-center animate-pulse">Lista de Quizzes 📋</h1>
+      <h1 className="text-4xl font-bold mb-6 text-[#e51a4c] text-center animate-pulse">Lista de Quizzes 📋</h1>
       {quizzes.length === 0 ? (
         <p className="text-gray-600 text-center">No hay quizzes creados aún.</p>
       ) : (
+        // Mapea a través de la lista de quizzes y renderiza cada uno
         quizzes.map((q, index) => (
           <motion.div
             key={index}
@@ -24,7 +26,7 @@ const ListarQuiz = ({ quizzes }) => {
                 />
               )}
             </div>
-            <h2 className="text-2xl font-semibold mb-4 text-center animate-bounce">Quiz {index + 1}</h2>
+            <h2 className="text-2xl font-semibold mb-4 text-center animate-bounce">Quiz🤩 {index + 1}</h2>
             <div className="mb-4">
               <p className="text-lg font-medium mb-2 text-gray-700 text-center">{q.question}</p>
               <div className="flex flex-col items-center">
@@ -35,7 +37,7 @@ const ListarQuiz = ({ quizzes }) => {
                     whileHover={{ scale: 1.05, backgroundColor: '#a4cc64' }}
                     whileTap={{ scale: 0.95 }}
                   >
-                    <span className="text-gray-600 text-lg font-medium mr-2">{optionIndex + 1}.</span>
+                    <span className="text-gray-600 text-lg font-medium mr-2">{optionIndex + 1}🤔</span>
                     <span className="bg-[#a4cc64] text-white px-6 py-3 rounded-lg shadow-md text-lg">
                       {option}
                     </span>
@@ -43,6 +45,7 @@ const ListarQuiz = ({ quizzes }) => {
                 ))}
               </div>
             </div>
+            {/* //muesta las respuesta corecta */}
             {q.answer && (
               <p className="font-semibold text-[#a4cc64] text-center">Respuesta Correcta: {q.answer}</p>
             )}
