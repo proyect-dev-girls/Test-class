@@ -5,12 +5,17 @@ import morgan from "morgan";
 
 const app = express();
 
+// Importaciones
+import { startDB } from "./config/database.js";
+import { environments } from "./config/environments.js";
+
 //Middlewares
 app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 app.use(helmet());
 
-app.listen(3000, async () => {
-  console.log("Servidor corrriendo en puerto 3000");
+app.listen(environments.PORT, async () => {
+  console.log("Servidor corrriendo en puerto: ", environments.PORT);
+  startDB();
 });
