@@ -1,6 +1,9 @@
 // src/components/DashboardAdmin/sindebar/alumnos/Alumnos.jsx
 import React, { useContext, useState } from 'react';
 import { QuizContext } from '../../../../contexts/quizContexts';
+import MessageAlert from '../../MesajeAlertas';
+
+
 
 const Alumnos = () => {
   const { quizzes } = useContext(QuizContext);
@@ -26,6 +29,7 @@ const Alumnos = () => {
             <button
               onClick={() => handleStartQuiz(quiz)}
               className="mt-4 bg-[#a4cc64] text-white px-4 py-2 rounded-lg hover:bg-[#8bbd4e] transition duration-300"
+  
             >
               Comenzar Quiz
             </button>
@@ -37,6 +41,7 @@ const Alumnos = () => {
         <div className="mt-6 p-6 bg-[#f48ca4] rounded-lg text-white">
           <h2 className="text-2xl font-bold mb-4">Estás jugando el Quiz {selectedQuiz.question}</h2>
           {/* Aquí puedes agregar la lógica para jugar el quiz */}
+         
         </div>
       )}
     </div>

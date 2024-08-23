@@ -48,7 +48,7 @@ export const Home = () => {
       </div>
 
       {/* Botón de comenzar */}
-      <Link to="/Dashoard" className="bg-[#a4cc64] text-white px-8 py-4 rounded-lg text-2xl font-semibold mt-8 transition-transform transform hover:scale-105">
+      <Link to="/login" className="bg-[#a4cc64] text-white px-8 py-4 rounded-lg text-2xl font-semibold mt-8 transition-transform transform hover:scale-105">
         Comenzar ya
       </Link>
     </div>
