@@ -1,33 +1,29 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
+import { Quizz } from "./quizzes.model.js";
 
-export const Alumno = sequelize.define(
-  "Alumno",
+export const Pregunta = sequelize.define(
+  "Pregunta",
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    nombres: {
+    pregunta: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    apellidos: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    dni: {
+    quizz_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    es_profesor: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
+      defaultValue: true,
     },
   },
   {
     timestamps: true,
-    tableName: "alumnos",
+    tableName: "preguntas",
   }
 );
+
+Quizz.hasMany(Pregunta, { foreignKey: "quizz_id", as: "preguntas" });
+Pregunta.belongsTo(Quizz, { foreignKey: "id" });

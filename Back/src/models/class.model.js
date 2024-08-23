@@ -1,33 +1,25 @@
 import { sequelize } from "../config/database.js";
 import { DataTypes } from "sequelize";
 
-export const Alumno = sequelize.define(
-  "Alumno",
+export const Class = sequelize.define(
+  "Class",
   {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
     },
-    nombres: {
+    fecha: {
+      type: DataTypes.DATE,
+      allowNull: false,
+    },
+    tema: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    apellidos: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    dni: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    es_profesor: {
-      type: DataTypes.BOOLEAN,
-      defaultValue: false,
     },
   },
   {
     timestamps: true,
-    tableName: "alumnos",
+    tableName: "classes",
   }
 );
