@@ -1,6 +1,6 @@
 // src/components/Sidebar/Quiz/CrearQuiz.jsx
-
 import React, { useState } from 'react';
+import { MdUpload } from 'react-icons/md'; // Importa el icono de carga
 import ListarQuiz from './ListQuiz';
 import Sidebar from '../Sidebar';
 
@@ -50,9 +50,9 @@ const CrearQuiz = () => {
 
   return (
     <div className="flex">
-      <div className="w-64">
+      <div className="w-64 bg-white text-gray-800 shadow-lg border border-[#a4cc64]">
         {/* Incluye aquí tu Sidebar */}
-        <Sidebar/>
+        <Sidebar />
       </div>
       <div className="flex-1 p-8 bg-gradient-to-r from-[#f48ca4] to-[#a4cc64]">
         <div className="flex flex-col lg:flex-row">
@@ -63,44 +63,50 @@ const CrearQuiz = () => {
                 key={questionIndex}
                 className="bg-white p-6 mb-4 rounded-lg shadow-md border border-[#a4cc64] transition-transform transform hover:scale-105"
               >
-                <div className="mb-4 flex justify-center">
-                  {q.image && (
+                <div className="mb-4 flex flex-col items-center">
+                  {q.image ? (
                     <img
                       src={q.image}
                       alt="Imagen de la pregunta"
-                      className="w-20 h-20 object-cover rounded-md border border-[#a4cc64]"
+                      className="w-24 h-24 object-cover rounded-md border border-[#a4cc64] shadow-lg mb-4"
                     />
+                  ) : (
+                    <label className="flex flex-col items-center cursor-pointer">
+                      <MdUpload className="text-[#a4cc64] text-4xl mb-2" />
+                      <span className="text-gray-600">Sube una imagen</span>
+                      <input
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => handleImageChange(questionIndex, e)}
+                        className="hidden"
+                      />
+                    </label>
                   )}
                 </div>
-                <input
-                  type="file"
-                  accept="image/*"
-                  onChange={(e) => handleImageChange(questionIndex, e)}
-                  className="w-full mb-4 p-2 border border-gray-300 rounded transition-shadow duration-300 ease-in-out hover:shadow-lg"
-                />
                 <input
                   type="text"
                   value={q.question}
                   onChange={(e) => handleQuestionChange(questionIndex, e)}
                   placeholder="Ingrese la pregunta"
-                  className="w-full mb-4 p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64] transition-shadow duration-300 ease-in-out hover:shadow-lg"
+                  className="form-control w-full mb-4 p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64] transition-shadow duration-300 ease-in-out hover:shadow-lg"
                 />
                 {q.options.map((option, optionIndex) => (
-                  <input
-                    key={optionIndex}
-                    type="text"
-                    value={option}
-                    onChange={(e) => handleOptionChange(questionIndex, optionIndex, e)}
-                    placeholder={`Opción ${optionIndex + 1}`}
-                    className="w-full mb-3 p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64] transition-shadow duration-300 ease-in-out hover:shadow-lg"
-                  />
+                  <div key={optionIndex} className="mb-3">
+                    <input
+                      type="text"
+                      value={option}
+                      onChange={(e) => handleOptionChange(questionIndex, optionIndex, e)}
+                      placeholder={`Opción ${optionIndex + 1}`}
+                      className="form-control w-full p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64] transition-shadow duration-300 ease-in-out hover:shadow-lg"
+                    />
+                  </div>
                 ))}
                 <input
                   type="text"
                   value={q.answer}
                   onChange={(e) => handleAnswerChange(questionIndex, e)}
                   placeholder="Respuesta Correcta"
-                  className="w-full mb-4 p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64] transition-shadow duration-300 ease-in-out hover:shadow-lg"
+                  className="form-control w-full mb-4 p-4 border border-gray-300 rounded-lg shadow-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64] transition-shadow duration-300 ease-in-out hover:shadow-lg"
                 />
               </div>
             ))}
