@@ -16,6 +16,7 @@ const AppRouter = () => {
           <Route path="/jugar-quiz" element={<JugarQuiz/>} />
           <Route path="/Dashoard" element={<Dashboard/>}/>
           
+          
         </Routes>
       </Router>
     )
