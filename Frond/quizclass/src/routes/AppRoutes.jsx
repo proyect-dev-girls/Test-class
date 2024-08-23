@@ -5,7 +5,7 @@ import { Dashboard } from '../page/AdminProfe';
 import CrearQuiz from '../components/DashboardAdmin/sindebar/quiz/crearQuiz';
 import Alumnos  from '../components/DashboardAdmin/sindebar/alumnos/Alumnos';
 import JugarQuiz from '../components/DashboardAdmin/sindebar/alumnos/JugarQuiz';
-import Register from '../components/auth/Register/Register';
+import Register from '../components/auth/Register/Register'
 import Login from '../components/auth/login/Login';
 
 const AppRouter = () => {

@@ -90,16 +90,16 @@ const Login = () => {
                         required
                         className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#a4cc64]"
                     />
-                    <button
+                    <Link to={'/Dashoard'}
                         type="submit"
-                        className="w-full py-2 bg-[#a4cc64] text-white font-bold rounded-md hover:bg-[#8cb456] transition duration-200"
+                        className="w-full py-2 bg-[#a4cc64] text-center  text-white font-bold rounded-md hover:bg-[#8cb456] transition duration-200"
                     >
                         Iniciar Sesión
-                    </button>
+                    </Link>
                   {/* mensaje que diga no soy un profesor*/}
                   <div className="mt-4 text-center">
                         <span className="text-gray-600">¿No eres profesor? </span>
-                        <Link to="/otra-ruta" className="text-[#f48ca4] font-bold hover:underline">
+                        <Link to="/register" className="text-[#f48ca4] font-bold hover:underline">
                             No soy profesor
                         </Link>
                     </div>
