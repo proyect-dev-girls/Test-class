@@ -4,26 +4,26 @@ const Notificaciones = () => {
   const notificaciones = [
     {
       id: 1,
-      profesor: "Prof. García",
-      accion: "Subió un nuevo quiz",
+      Alumno: "Ezequiel Romero",
+      accion: "Respondió en quiz",
       fecha: "17/08/2024",
     },
     {
       id: 2,
-      profesor: "Prof. López",
-      accion: "Agregó una nueva calificación",
+      Alumno: "Milagros Villalba",
+      accion: "Respondió el quiz",
       fecha: "19/08/2024",
     },
     {
       id: 3,
-      profesor: "Prof. López",
-      accion: "Agregó un nuevo quiz",
+      Alumno: "Sofia Roda",
+      accion: "Respondió el quiz",
       fecha: "22/08/2024",
     },
     {
       id: 4,
-      profesor: "Prof. López",
-      accion: "Agregó un nuevo quiz",
+      Alumno: "Jorge López",
+      accion: "Respondió el quiz",
       fecha: "25/08/2024",
     },
   ];
@@ -43,7 +43,7 @@ const Notificaciones = () => {
               <table className="w-full table-auto">
                 <thead>
                   <tr className="bg-[#a4cc64] text-white">
-                    <th className="p-4 border-b">Profesor</th>
+                    <th className="p-4 border-b">Alumno</th>
                     <th className="p-4 border-b">Acción</th>
                     <th className="p-4 border-b">Fecha</th>
                   </tr>
@@ -51,7 +51,7 @@ const Notificaciones = () => {
                 <tbody>
                   {notificaciones.map((notificacion) => (
                     <tr key={notificacion.id} className="hover:bg-gray-100">
-                      <td className="p-4 border-b">{notificacion.profesor}</td>
+                      <td className="p-4 border-b">{notificacion.Alumno}</td>
                       <td className="p-4 border-b">{notificacion.accion}</td>
                       <td className="p-4 border-b">{notificacion.fecha}</td>
                     </tr>
