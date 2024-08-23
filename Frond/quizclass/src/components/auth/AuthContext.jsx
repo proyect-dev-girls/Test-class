@@ -1,41 +1,39 @@
-import React, {Children, createContext, useState} from 'react';
+import React, { createContext, useState } from 'react';
 
-// Crea el contexto de autenticacion
+// Crea el contexto de autenticación
 export const AuthContext = createContext();
 
-export const AuthProvider = ({Children}) => {
+export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [isAuthenticated, setAuthenticated] = useState(false);
     
     const register = async (userData) => {
         try {
-            //Simulacion de una solicitud al back
-            const response = await fetch('https://tu-api.com/register',{
-                method:'POST',
+            // Simulación de una solicitud al backend
+            const response = await fetch('https://tu-api.com/register', {
+                method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(userData),
             });
 
-
             const data = await response.json();
 
-            if(data.success){
+            if (data.success) {
                 setUser(data.user);
                 setAuthenticated(true);
                 alert('Registro Exitoso');
             } else {
                 alert(`Error: ${data.message}`); 
             }
-        }catch(error){
+        } catch (error) {
             console.error('Error al registrar:', error);
-            alert('Ocurrio un error durante el registro.');
-        
+            alert('Ocurrió un error durante el registro.');
         }
     };
 
-    const login = async (loginData) =>{
+    const login = async (loginData) => {
         try {
             const response = await fetch('https://tu-api.com/login', {
                 method: 'POST',
@@ -55,7 +53,7 @@ export const AuthProvider = ({Children}) => {
                 alert(`Error: ${data.message}`); 
             }
 
-        }catch(error){
+        } catch (error) {
             console.error('Error al iniciar sesión:', error);
             alert('Ocurrió un error durante el inicio de sesión.');
         }
@@ -69,8 +67,8 @@ export const AuthProvider = ({Children}) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, isAuthenticated, register, login, logout}}>
-            {Children}
+        <AuthContext.Provider value={{ user, isAuthenticated, register, login, logout }}>
+            {children}
         </AuthContext.Provider>
-    )
+    );
 };
