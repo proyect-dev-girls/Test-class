@@ -33,7 +33,7 @@ export const sequelize = new Sequelize(
 
 export async function startDB() {
   try {
-    await sequelize.sync({ force: false });
+    await sequelize.sync({ force: true });
     console.log("Starting database...");
   } catch (error) {
     console.log(error);
