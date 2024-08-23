@@ -6,7 +6,7 @@ export const createClass = async (req, res) => {
 
     if (!newClass) {
       throw {
-        message: "Error al crear el Alumno",
+        message: "Error al crear la clase",
       };
     }
 
