@@ -37,6 +37,14 @@ const Sidebar = () => {
               <span className="text-lg">Notificaciones</span>
             </Link>
           </li>
+          <li className="mb-8">
+            <Link
+              to="/lista-quizzes"
+              className="flex items-center p-4 rounded-lg hover:bg-[#f48ca4] hover:text-white transition-colors duration-300 ease-in-out"
+            >
+              <span className="text-lg">Lista de Quizzes</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>
