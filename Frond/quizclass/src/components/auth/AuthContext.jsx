@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const register = async (userData) => {
     try {
       // Simulación de una solicitud al backend
-      const response = await fetch("https://tu-api.com/register", {
+      const response = await fetch("http://localhost:3000/api/alumno", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -22,7 +22,6 @@ export const AuthProvider = ({ children }) => {
 
       if (data.success) {
         setUser(data.user);
-        setAuthenticated(true);
         alert("Registro Exitoso");
       } else {
         alert(`Error: ${data.message}`);
@@ -46,8 +45,13 @@ export const AuthProvider = ({ children }) => {
 
       if (data.success) {
         setUser(data.user);
-        setAuthenticated(true);
         alert("Inicio de sesión exitoso");
+
+        if (data.user.es_profesor) {
+          return true;
+        } else {
+          return false;
+        }
       } else {
         alert(`Error: ${data.message}`);
       }

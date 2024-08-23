@@ -2,13 +2,15 @@ import { useState, useEffect, useContext } from "react";
 import { AuthContext } from "../AuthContext";
 import imageNene from "../../../assets/image/nene.png";
 import { motion, useAnimation } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
   const [formData, setFormData] = useState({ username: "", dni: "" });
   const [bgColor, setBgColor] = useState("#f48ca4");
   const controls = useAnimation();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const changeBackgroundColor = () => {
@@ -30,10 +32,15 @@ const Login = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Hola");
-    login(formData);
+    const loginIndex = await login(formData);
+    console.log(loginIndex);
+    if (loginIndex === true) {
+      return navigate("/Dashoard");
+    } else if (loginIndex === false) {
+      return navigate("/alumnos");
+    }
   };
 
   return (

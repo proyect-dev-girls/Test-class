@@ -2,6 +2,7 @@ import { Alumno } from "../models/alumnos.model.js";
 
 // Controlador para crear un nuevo alumno
 export const createAlumno = async (req, res) => {
+  const { dni } = req.body;
   try {
     const AlumnoExists = await Alumno.findOne({ where: { dni } });
 
