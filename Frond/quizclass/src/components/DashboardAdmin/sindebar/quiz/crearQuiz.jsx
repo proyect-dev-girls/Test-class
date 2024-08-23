@@ -1,6 +1,5 @@
-// src/components/Sidebar/Quiz/CrearQuiz.jsx
 import React, { useState } from 'react';
-import { MdUpload } from 'react-icons/md'; // Importa el icono de carga
+import { MdUpload } from 'react-icons/md'; 
 import ListarQuiz from './ListQuiz';
 import Sidebar from '../Sidebar';
 
@@ -51,7 +50,6 @@ const CrearQuiz = () => {
   return (
     <div className="flex">
       <div className="w-64 bg-white text-gray-800 shadow-lg border border-[#a4cc64]">
-        {/* Incluye aquí tu Sidebar */}
         <Sidebar />
       </div>
       <div className="flex-1 p-8 bg-gradient-to-r from-[#f48ca4] to-[#a4cc64]">

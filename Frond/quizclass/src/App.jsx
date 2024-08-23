@@ -1,15 +1,13 @@
-import AppRouter from "./routes/AppRoutes"
-
+import React from 'react';
+import AppRouter from './routes/AppRoutes';
+import { QuizProvider } from './contexts/quizContexts';
 
 function App() {
-  
-
   return (
-    <>
-      <AppRouter/>
-    
-    </>
-  )
+    <QuizProvider>
+      <AppRouter />
+    </QuizProvider>
+  );
 }
 
-export default App
+export default App;

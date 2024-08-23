@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Home } from '../page/Home';
 import { Dashboard } from '../page/AdminProfe';
 import CrearQuiz from '../components/DashboardAdmin/sindebar/quiz/crearQuiz';
-import { Alumnos } from '../components/DashboardAdmin/sindebar/alumnos/Alumnos';
+import Alumnos  from '../components/DashboardAdmin/sindebar/alumnos/Alumnos';
+import JugarQuiz from '../components/DashboardAdmin/sindebar/alumnos/JugarQuiz';
 
 const AppRouter = () => {
     return (
@@ -12,7 +13,7 @@ const AppRouter = () => {
           <Route path="/" element={<Home/>}/>
           <Route path="/crear-quiz" element={<CrearQuiz />} />
           <Route path="/alumnos" element={<Alumnos/>} />
-          
+          <Route path="/jugar-quiz" element={<JugarQuiz/>} />
           <Route path="/Dashoard" element={<Dashboard/>}/>
           
         </Routes>

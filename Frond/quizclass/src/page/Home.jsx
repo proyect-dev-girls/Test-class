@@ -7,6 +7,8 @@ export const Home =()=>{
         <>
           <h1> home bienbenido</h1>
           <Link to='/Dashoard'>ADMIN</Link>
+          <br />
+          <Link to='/alumnos'>Alumnos</Link>
         </>
     )
 }
