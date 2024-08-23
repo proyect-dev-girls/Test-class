@@ -3,6 +3,7 @@ import React, { useContext, useState, useEffect } from 'react';
 import { QuizContext } from '../../../../contexts/quizContexts';
 import imageNene from '../../../../assets/image/nene.png';
 import { motion, useAnimation } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Alumnos = () => {
   const { quizzes } = useContext(QuizContext);
@@ -42,14 +43,20 @@ const Alumnos = () => {
             <span className="text-xl mr-2">📚</span>
             <span>Mis Quizzes</span>
           </button>
-          <button className="flex items-center p-2 rounded-lg hover:bg-[#f48ca4] transition duration-300">
+          <Link to="/notificaciones" className="flex items-center p-2 rounded-lg hover:bg-[#f48ca4] transition duration-300">
             <span className="text-xl mr-2">🔔</span>
             <span>Notificaciones</span>
-          </button>
+            </Link>
           <button className="flex items-center p-2 rounded-lg hover:bg-[#f48ca4] transition duration-300">
             <span className="text-xl mr-2">⚙️</span>
             <span>Configuración</span>
           </button>
+          {/* cerrar sesion*/}
+          <Link to={'/'} className="flex items-center p-2 rounded-lg hover:bg-[#f48ca4] transition duration-300">
+            <span className="text-xl mr-2">🔒</span>
+            <span>Salir</span>
+          </Link>
+
         </div>
       </motion.div>
 

@@ -5,8 +5,11 @@ import { Dashboard } from '../page/AdminProfe';
 import CrearQuiz from '../components/DashboardAdmin/sindebar/quiz/crearQuiz';
 import Alumnos  from '../components/DashboardAdmin/sindebar/alumnos/Alumnos';
 import JugarQuiz from '../components/DashboardAdmin/sindebar/alumnos/JugarQuiz';
-import Register from '../components/auth/Register/Register';
+import Register from '../components/auth/Register/Register'
 import Login from '../components/auth/login/Login';
+import Notificaciones from '../components/DashboardAdmin/sindebar/notificaciones/notificacionProfesor';
+
+
 
 const AppRouter = () => {
     return (
@@ -19,7 +22,7 @@ const AppRouter = () => {
           <Route path="/Dashoard" element={<Dashboard/>}/>
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
-          
+          <Route path="/notificaciones" element={<Notificaciones/>}/>
           
         </Routes>
       </Router>

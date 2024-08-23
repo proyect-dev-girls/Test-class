@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaPlus, FaUserFriends, FaBell,FaChartBar } from 'react-icons/fa'; //son icons
 import imageNene from '../../../assets/image/nene.png';// importe la imagen del nene
-import { NotificationContext } from './notificaciones/notificacionContext';
+import { NotificationContext } from './notificaciones/notificacionContext'; 
+
+
 
 const Sidebar = () => {
 
