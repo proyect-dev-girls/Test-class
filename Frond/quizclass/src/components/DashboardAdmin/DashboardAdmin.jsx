@@ -7,7 +7,8 @@ import Sidebar from './sindebar/Sidebar';
 Chart.register(CategoryScale, LinearScale, ArcElement, BarElement);
 
 const DashboardAdmin = () => {
-    const dataBar = {
+    //funcion para Configura un gráfico de barras que muestra el número de respuestas correctas para diferentes preguntas.
+      const dataBar = {
         labels: ['Pregunta 1', 'Pregunta 2', 'Pregunta 3'],
         datasets: [{
           label: 'Respuestas Correctas',
@@ -15,17 +16,19 @@ const DashboardAdmin = () => {
           backgroundColor: '#a4cc64', // Verde
         }]
       };
-    
+      
+    //Funcion para Configura un gráfico de torta que muestra el porcentaje de respuestas correctas e incorrectas.
       const dataDoughnut = {
         labels: ['Correctas', 'Incorrectas'],
         datasets: [{
           data: [300, 50],
-          backgroundColor: ['#f48ca4', '#ffcc00'], // Rosa y un color adicional
+          backgroundColor: ['#f48ca4', '#ffcc00'], // Rosa y amarillo
         }]
       };
     
       return (
         <div className="flex bg-gray-100">
+            {/* coloque el sindebar para que se vea  */}
           <Sidebar />
           <div className="flex-1 p-8">
             <h1 className="text-3xl font-bold mb-6 text-verde">Dashboard</h1>
