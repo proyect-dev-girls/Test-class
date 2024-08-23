@@ -31,12 +31,13 @@ export const createAlumno = async (req, res) => {
   }
 };
 
-export const ctrlGetAllAlumnos = async () => {
+export const ctrlGetAllAlumnos = async (req, res) => {
   try {
     const alumnos = await Alumno.findAll();
+
     return res.status(200).json(alumnos);
   } catch (error) {
-    console.log("error: " + error.message);
+    console.error("Error al obtener alumnos:", error.message);
     return res.status(500).json({ message: "Error del servidor" });
   }
 };
